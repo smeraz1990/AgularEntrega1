@@ -3,4 +3,28 @@
     <p>
         Me gustaria aprender mas sobre los distintos lenguajes de programacion, asi mismo la fuison de herramientas para crear diversas aplicaciones.
     </p>
+
+    <br>
+
+    <h1>Tabla de Alumnos</h1>
+    <table class="table">
+        <thead>
+            <th>Nombre</th>
+            <th>pais</th>
+            <th>estado</th>
+            <th>Fecha nacimiento</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let alumno of arrayAlumnos">
+                <td>{{alumno.nombre}}</td>
+                <td>{{alumno.pais}}</td>
+                <td>{{alumno.estado}}</td>
+                <td>{{alumno.FechaNacimiento | pipeFechaNac}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <button class="btn btn-primary" (click)= "CargarDatos()">Cargar Datos</button>
+    </div>
 </main>

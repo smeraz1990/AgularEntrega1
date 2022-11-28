@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MenuLatComponent } from './menu-lat/menu-lat.component';
 import { ContentComponent } from './content/content.component';
 import { MenuSupComponent } from './menu-sup/menu-sup.component';
+import { PipeFechaNacPipe } from './pipe-fecha-nac.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuLatComponent,
     ContentComponent,
-    MenuSupComponent
+    MenuSupComponent,
+    PipeFechaNacPipe
   ],
   imports: [
     BrowserModule,
