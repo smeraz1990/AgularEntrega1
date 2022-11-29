@@ -15,7 +15,7 @@
             <th>Fecha nacimiento</th>
         </thead>
         <tbody>
-            <tr *ngFor="let alumno of arrayAlumnos">
+            <tr *ngFor="let alumno of arrayAlumnos" [ngClass]="alumno.estado == 'Durango' ? 'claseVerde': 'claseBlanco'">
                 <td>{{alumno.nombre}}</td>
                 <td>{{alumno.pais}}</td>
                 <td>{{alumno.estado}}</td>
