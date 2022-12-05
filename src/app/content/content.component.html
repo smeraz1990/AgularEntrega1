@@ -4,8 +4,60 @@
         Me gustaria aprender mas sobre los distintos lenguajes de programacion, asi mismo la fuison de herramientas para crear diversas aplicaciones.
     </p>
 
-    <br>
+    <br><br>
 
+    <h2>El boton de registro se hablita hasta que el formulario es valido (todo required)</h2>
+
+    <form class="form" [formGroup]="formularioRegistro" (ngSubmit) = "submit()">
+        <div class="row">
+          <div class="col-md-12 order-md-1">
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label for="email">Username <span class="text-muted">(email)</span></label>
+                  <input type="email" class="form-control" formControlName="inpUser">
+                  <span *ngIf="this.formularioRegistro.get('inpUser')?.invalid && this.formularioRegistro.get('inpUser')?.dirty">
+                    El username es requerido
+                  </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label for="Nombre">Nombre Completo</label>
+                  <input type="text" class="form-control" formControlName="inpName">
+                  <span *ngIf="this.formularioRegistro.get('inpName')?.invalid && this.formularioRegistro.get('inpName')?.dirty">
+                    El nombre es requerido
+                  </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label for="Nombre">Password</label>
+                  <input type="text" class="form-control" formControlName="inpPassword">
+                  <span *ngIf="this.formularioRegistro.get('inpPassword')?.invalid && this.formularioRegistro.get('inpPassword')?.dirty">
+                    El password es requerido
+                  </span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label for="Nombre">Direccion</label>
+                  <input type="text" class="form-control" formControlName="inpDireccion">
+                  <span *ngIf="this.formularioRegistro.get('inpDireccion')?.invalid && this.formularioRegistro.get('inpDireccion')?.dirty">
+                   La direccion es requerida
+                  </span>
+                </div>
+              </div>
+              <hr class="mb-4">
+              <div class="row text-center">
+                <div class="col-md-12 mb-3">
+                  <button class="btn btn-primary btn-lg btn-block" [disabled]="formularioRegistro.invalid" type="submit">Registrar</button>
+                </div>
+              </div>
+          </div>
+        </div>
+      </form>
+
+      <br>  <br>
     <h1>Tabla de Alumnos</h1>
     <table class="table">
         <thead>

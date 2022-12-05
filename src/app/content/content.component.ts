@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormBuilder,AbstractControl,ValidationErrors,Validators  } from '@angular/forms';
+
 
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.css']
 })
-export class ContentComponent {
-
+export class ContentComponent{
   public arrayAlumnos: any = [];
+  public formularioRegistro : FormGroup;
+
+  constructor(
+    private fb: FormBuilder
+  ){}
 
 
   CargarDatos()
@@ -23,9 +29,19 @@ export class ContentComponent {
   }
 
 
-
-
-  ngOnit(): void {
+  ngOnInit(): void {
     this.arrayAlumnos = []
+    this.formularioRegistro = this.fb.group({
+      inpUser:["",[Validators.required]],
+      inpName:["",[Validators.required]],
+      inpPassword:["",[Validators.required]],
+      inpDireccion:["",[Validators.required]]
+    })
+  }
+
+  submit(): void{
+    console.log(this.formularioRegistro.value)
   }
 }
+
+
